@@ -13,14 +13,24 @@ class Main
     
 
     // here is the array 
-	 public  $list = array(9, 2, 5, 4, 12, 7);
-	
-	function __construct($newarray)
-	{
+	 // public  $list = array(9, 2, 5, 4, 12, 7);
 
-		 array_push($this->list,$newarray);
-		return $this->list;
-	}
+	    public function list()
+	    {
+	    	$collection = array();
+
+			for($i = 1; $i <= 32; $i++){
+			 $ukey =  rand(47, 92);
+			  if(!in_array($ukey, $collection)){
+			    $collection[] =$ukey ;
+			  }
+			}
+			return $collection;
+	    }
+   
+
+
+
 
 
    
@@ -30,7 +40,7 @@ class Main
 
 		  $total = 0;
 
-		foreach ($this->list as $arr) {
+		foreach ($this->list() as $arr) {
 		
 			$total += $arr ;
                                    }
@@ -52,7 +62,7 @@ class Main
 
        public function Arraylenght()
        {
-       	return  count($this->list);   
+       	return  count($this->list());   
 
        }
 
@@ -61,7 +71,7 @@ class Main
 
      	 $total = 0;
     	
-		foreach ($this->list as $arr) {
+		foreach ($this->list() as $arr) {
 		
             $subtrat = $arr - $this->getMean();
          // exponesial
